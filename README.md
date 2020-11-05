@@ -1,3 +1,10 @@
+# Мой личный репозиторий с моими решениями задач.
+Для обновления измененных Наташей задач используй git pull в директории /home/python/pyneng-examples-exercises и переноси эти изменения в свой репозиторий pyneng2 (pyneng2 не синхронизирован с репозиторием Наташи).
+
+
+
+
+
 # Задания и примеры из книги "Python для сетевых инженеров"
 
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/) [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
