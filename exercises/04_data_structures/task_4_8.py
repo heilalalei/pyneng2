@@ -20,3 +20,12 @@
 """
 
 ip = "192.168.3.1"
+
+output = """{0:<8}  {1:<8}  {2:<8}  {3:<8}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+"""
+
+ip_oct = ip.split(".")
+result = output.format(int(ip_oct[0]),int(ip_oct[1]),int(ip_oct[2]),int(ip_oct[3]))
+
+print(result)
