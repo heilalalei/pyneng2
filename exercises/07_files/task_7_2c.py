@@ -16,4 +16,18 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
 
+from sys import argv
+
 ignore = ["duplex", "alias", "Current configuration"]
+src_file = argv[1]
+dst_file = argv[2]
+
+with open(src_file, 'r') as src, open(dst_file, 'w') as dst:
+    for line in src:
+        ignore_flag = False
+        for word in ignore:
+            if word in line:
+                ignore_flag = True
+        if not ignore_flag:
+            dst.write(line)            
+            

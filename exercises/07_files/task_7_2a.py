@@ -12,4 +12,17 @@
 
 """
 
+from sys import argv
+
 ignore = ["duplex", "alias", "Current configuration"]
+config = argv[1]
+with open(config, 'r') as f:
+    for line in f:
+        if not line.startswith("!"): 
+            ignore_flag = False
+            for word in ignore:
+                if word in line:
+                    ignore_flag = True
+            if not ignore_flag:
+                print(line.rstrip())            
+            

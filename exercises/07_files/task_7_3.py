@@ -17,3 +17,21 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+with open('CAM_table.txt', 'r') as f:
+    for line in f:
+        for word in line.split():
+            if len(word) == 14 and '.' in word:
+                print(line.rstrip().replace('DYNAMIC  ', ''))
+                break
+
+
+# Решение Наташи
+'''
+with open("CAM_table.txt", "r") as conf:
+    for line in conf:
+        words = line.split()
+        if words and words[0].isdigit():
+            vlan, mac, _, interface = words
+            print(f"{vlan:9}{mac:20}{interface}")
+'''            
