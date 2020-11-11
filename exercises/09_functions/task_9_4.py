@@ -35,3 +35,27 @@ def ignore_command(command, ignore):
     * False - если нет
     """
     return any(word in command for word in ignore)
+
+
+def convert_config_to_dict(config_filename):
+    """ Обрабатывает конфигурационный файл коммутатора и возвращает словарь """
+    result = {}
+    
+    with open(config_filename, "r") as config:
+        for command in config:
+            command = command.rstrip()
+            if not command or command.startswith("!") or ignore_command(command, ignore):
+                continue
+            elif not command.startswith(" "):
+                global_command = command
+                result[global_command] = []
+            else:
+                result[global_command].append(command.strip())
+                
+            
+    
+    print(result)
+    return result
+    
+    
+convert_config_to_dict("config_sw1.txt")
