@@ -38,8 +38,18 @@ def parse_cdp_neighbors(command_output):
     работать и с файлами и с выводом с оборудования.
     Плюс учимся работать с таким выводом.
     """
-
+    result = {}
+    output_list = [line for line in command_output.split("\n") if line]
+    local_device = output_list[0].split(">")[0]
+       
+    for line in output_list:
+        if len(line.split()) >= 5 and line.split()[3].isdigit():
+            device_id, l_intf, l_intf_id, *rest, r_intf, r_intf_id = line.split()
+            local_intf = l_intf + l_intf_id
+            remote_intf = r_intf + r_intf_id
+            result[(local_device, local_intf)] = (device_id, remote_intf)
+    return result
 
 if __name__ == "__main__":
-    with open("sh_cdp_n_sw1.txt") as f:
+    with open("sh_cdp_n_r3.txt") as f:
         print(parse_cdp_neighbors(f.read()))
